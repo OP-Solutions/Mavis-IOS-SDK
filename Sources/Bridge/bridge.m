@@ -7,7 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 void _arSessionStart(char* _arSessionInfo){
+    
 }
 
 void _targetDetected(char* _target){

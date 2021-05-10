@@ -3,36 +3,40 @@ import UnityFramework
 
 public class Mavis: UIResponder, UIApplicationDelegate {
 
-    private static let shared = Mavis()
+    private static let dataBundleId: String = "com.unity3d.framework"
+    private static let frameworkPath: String = "/Frameworks/UnityFramework.framework"
+    private static let unloadListener = MavisUnityListener()
 
-    private let dataBundleId: String = "com.unity3d.framework"
-    private let frameworkPath: String = "/Frameworks/UnityFramework.framework"
-
-    private var mavisOptions: MavisOptions?
-    private var ufw : UnityFramework?
-    private var hostMainWindow : UIWindow?
+    private static var mavisOptions: MavisOptions?
+    private static var ufw : UnityFramework?
+    private static var hostMainWindow : UIWindow?
 
     
     
-    private var isInitialized: Bool {
+    private static var isInitialized: Bool {
         ufw?.appController() != nil
     }
 
     	
     public static func Init(_ options : MavisOptions){
-        shared.mavisOptions = options;
+        mavisOptions = options;
     }
     
     public static func Launch(_ parentWindow: UIWindow?) {
-        shared.hostMainWindow = parentWindow
-        if shared.isInitialized {
-            shared.showWindow()
+        hostMainWindow = parentWindow
+        if isInitialized {
+            showWindow()
         } else {
-            shared.initWindow()
+            initWindow()
         }
     }
-
-    private func initWindow() {
+    public static func unloadUnity(){
+        ufw?.unregisterFrameworkListener(unloadListener)
+        ufw = nil
+        hostMainWindow?.makeKeyAndVisible()
+    }
+    
+    private static func initWindow() {
         if isInitialized {
             showWindow()
             return
@@ -45,7 +49,7 @@ public class Mavis: UIResponder, UIApplicationDelegate {
 
         self.ufw = ufw
         ufw.setDataBundleId(dataBundleId)
-        ufw.register(self)
+        ufw.register(unloadListener)
         ufw.runEmbedded(
             withArgc: CommandLine.argc,
             argv: CommandLine.unsafeArgv,
@@ -53,20 +57,20 @@ public class Mavis: UIResponder, UIApplicationDelegate {
         )
     }
 
-    private func showWindow() {
+    private static func showWindow() {
         if isInitialized {
             ufw?.showUnityWindow()
         }
     }
 
-    private func unloadWindow() {
+    private static func unloadWindow() {
         if isInitialized {
             ufw?.unloadApplication()
         }
     }
     
     
-    private func loadUnityFramework() -> UnityFramework? {
+    private static func loadUnityFramework() -> UnityFramework? {
         let bundlePath: String = Bundle.main.bundlePath + frameworkPath
 
         let bundle = Bundle(path: bundlePath)
@@ -83,13 +87,7 @@ public class Mavis: UIResponder, UIApplicationDelegate {
         }
         return ufw
     }
+    
+
 }
 
-extension Mavis: UnityFrameworkListener {
-
-    public func unityDidUnload(_ notification: Notification!) {
-        ufw?.unregisterFrameworkListener(self)
-        ufw = nil
-        hostMainWindow?.makeKeyAndVisible()
-    }
-}
