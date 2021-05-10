@@ -1,3 +1,3 @@
 # MavisSDK
 
-A description of this package.
+Mavis SDK for iOS applications
