@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "MavisSDK",
-            dependencies: ["UnityFramework", "WikitudeSDK", "iOSUnityBridge"]),
+            dependencies: ["UnityFramework", "WikitudeSDK"]),
         .binaryTarget(
             name: "UnityFramework",
             path: "UnityFramework.xcframework"),
@@ -25,6 +25,7 @@ let package = Package(
             path: "WikitudeSDK.xcframework"),
         .target(
             name: "iOSUnityBridge",
+            dependencies: ["MavisSDK"],
             path: "Sources/Bridge")
     ]
 )

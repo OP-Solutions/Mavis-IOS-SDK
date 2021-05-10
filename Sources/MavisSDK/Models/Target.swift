@@ -6,6 +6,6 @@
 //
 
 import Foundation
-class Target {
+public class Target {
     
 }

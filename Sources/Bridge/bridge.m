@@ -6,26 +6,25 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
-void _arSessionStart(char* _arSessionInfo){
-    
-}
-
-void _targetDetected(char* _target){
-}
-
-void _arContentsShown(char* _arContentsInfo){
-}
-
-void _arContentClicked(char* _arContent){
-}
-
-void _errorHandler(char* _mavisErrorInfo){
-}
-
-const char* _getLicenseKey(){
-    return NULL;
-}
+//
+//void _arSessionStart(char* _arSessionInfo){
+//    
+//}
+//
+//void _targetDetected(char* _target){
+//}
+//
+//void _arContentsShown(char* _arContentsInfo){
+//}
+//
+//void _arContentClicked(char* _arContent){
+//}
+//
+//void _errorHandler(char* _mavisErrorInfo){
+//}
+//
+//const char* _getLicenseKey(){
+//    return NULL;
+//}
 
 

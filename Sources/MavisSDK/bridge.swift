@@ -8,5 +8,7 @@
 import Foundation
 
 class IosUnityBridge {
-    
+//    @objc public static func ArSessionStart(_ arSessionInfo: String){
+//        
+//    }
 }

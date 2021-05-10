@@ -7,6 +7,6 @@
 
 import Foundation
 
-class MavisErrorInfo {
+public class MavisErrorInfo {
     
 }

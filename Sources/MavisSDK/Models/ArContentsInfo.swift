@@ -7,6 +7,6 @@
 
 import Foundation
 
-class ArContentsInfo {
+public class ArContentsInfo {
     
 }
