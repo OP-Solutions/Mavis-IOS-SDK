@@ -9,13 +9,13 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "MavisSDK",
-            targets: ["MavisSDK"]),
-        .library(
-            name: "UnityFramework",
-            targets: ["UnityFramework"]),
-        .library(
-            name: "WikitudeSDK",
-            targets: ["WikitudeSDK"])
+            targets: ["MavisSDK","UnityFramework","WikitudeSDK" ]),
+//        .library(
+//            name: "UnityFramework",
+//            targets: ["UnityFramework"]),
+//        .library(
+//            name: "WikitudeSDK",
+//            targets: ["WikitudeSDK"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
