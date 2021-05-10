@@ -8,6 +8,7 @@ public class Mavis: UIResponder, UIApplicationDelegate {
     private let dataBundleId: String = "com.unity3d.framework"
     private let frameworkPath: String = "/Frameworks/UnityFramework.framework"
 
+    private var mavisOptions: MavisOptions?
     private var ufw : UnityFramework?
     private var hostMainWindow : UIWindow?
 
@@ -19,19 +20,16 @@ public class Mavis: UIResponder, UIApplicationDelegate {
 
     	
     public static func Init(_ options : MavisOptions){
-        shared.setHostMainWindow(options.hostMainWindow)
+        shared.mavisOptions = options;
     }
     
-    public static func Launch() {
+    public static func Launch(_ parentWindow: UIWindow?) {
+        shared.hostMainWindow = parentWindow
         if shared.isInitialized {
             shared.showWindow()
         } else {
             shared.initWindow()
         }
-    }
-
-    private func setHostMainWindow(_ hostMainWindow: UIWindow?) {
-        self.hostMainWindow = hostMainWindow
     }
 
     private func initWindow() {

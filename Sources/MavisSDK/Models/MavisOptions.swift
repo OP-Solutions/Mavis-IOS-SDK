@@ -10,10 +10,7 @@ import UnityFramework
 
 public class MavisOptions {
     public var licenseKey : String = ""
-    public var hostMainWindow: UIWindow?
-    
     public init(){
-        
     }
     
 }
