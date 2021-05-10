@@ -6,34 +6,25 @@ import PackageDescription
 let package = Package(
     name: "MavisSDK",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "MavisSDK",
-            targets: ["MavisSDK"]),
-        .library(
-            name: "UnityFramework",
-            targets: ["UnityFramework"]),
-        .library(
-            name: "WikitudeSDK",
-            targets: ["WikitudeSDK"])
+            targets: ["MavisSDK","UnityFramework","WikitudeSDK","iOSUnityBridge"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "MavisSDK",
-            dependencies: ["UnityFramework", "WikitudeSDK"]
-        ),
+            dependencies: ["UnityFramework", "WikitudeSDK", "iOSUnityBridge"]),
         .binaryTarget(
             name: "UnityFramework",
             path: "UnityFramework.xcframework"),
         .binaryTarget(
             name: "WikitudeSDK",
-            path: "WikitudeSDK.xcframework")
-        
+            path: "WikitudeSDK.xcframework"),
+        .target(
+            name: "iOSUnityBridge",
+            path: "Sources/Bridge")
     ]
 )
