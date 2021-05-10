@@ -10,12 +10,12 @@ let package = Package(
         .library(
             name: "MavisSDK",
             targets: ["MavisSDK"]),
-        .library(
-            name: "UnityFramework",
-            targets: ["UnityFramework"]),
-        .library(
-            name: "WikitudeSDK",
-            targets: ["WikitudeSDK"])
+//        .library(
+//            name: "UnityFramework",
+//            targets: ["UnityFramework"]),
+//        .library(
+//            name: "WikitudeSDK",
+//            targets: ["WikitudeSDK"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -26,14 +26,15 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "MavisSDK",
-            dependencies: ["UnityFramework", "WikitudeSDK"]
-        ),
+            dependencies: ["UnityFramework", "WikitudeSDK", "iOSUnityBridge"]),
         .binaryTarget(
             name: "UnityFramework",
             path: "UnityFramework.xcframework"),
         .binaryTarget(
             name: "WikitudeSDK",
-            path: "WikitudeSDK.xcframework")
-        
+            path: "WikitudeSDK.xcframework"),
+        .target(
+            name: "iOSUnityBridge",
+            path: "Sources/Bridge")
     ]
 )
