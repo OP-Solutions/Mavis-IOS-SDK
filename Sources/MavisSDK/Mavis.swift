@@ -18,15 +18,15 @@ public class Mavis: UIResponder, UIApplicationDelegate {
     }
 
     	
-    public func Init(_ options : MavisOptions){
-        self.setHostMainWindow(options.hostMainWindow)
+    public static func Init(_ options : MavisOptions){
+        shared.setHostMainWindow(options.hostMainWindow)
     }
     
-    public func Launch() {
-        if isInitialized {
-            showWindow()
+    public static func Launch() {
+        if shared.isInitialized {
+            shared.showWindow()
         } else {
-            initWindow()
+            shared.initWindow()
         }
     }
 
