@@ -38,6 +38,7 @@ public struct MavisErrorInfo : Codable{
 
 public class MavisOptions {
     public var licenseKey : String = ""
+    public init(){}
 }
 
 public enum AugmentationType{
