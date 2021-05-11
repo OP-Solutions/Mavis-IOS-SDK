@@ -12,7 +12,7 @@ import Foundation
 public struct ArContent : Codable{
     public var name: String
     public var sessionId: String
-    public var type: String
+    public var type: AugmentationType
 }
 
 
@@ -41,42 +41,7 @@ public class MavisOptions {
     public init(){}
 }
 
-public enum AugmentationType{
+public enum AugmentationType: String, Codable{
     case Image
     case Object
-}
-
-extension AugmentationType: Codable {
-    
-    enum Key: CodingKey {
-        case rawValue
-    }
-    
-    enum CodingError: Error {
-        case unknownValue
-    }
-    
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: Key.self)
-        let rawValue = try container.decode(Int.self, forKey: .rawValue)
-        switch rawValue {
-        case 0:
-            self = .Image
-        case 1:
-            self = .Object
-        default:
-            throw CodingError.unknownValue
-        }
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: Key.self)
-        switch self {
-        case .Image:
-            try container.encode("Image", forKey: .rawValue)
-        case .Object:
-            try container.encode("Object", forKey: .rawValue)
-        }
-    }
-    
 }
