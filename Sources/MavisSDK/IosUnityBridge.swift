@@ -28,18 +28,23 @@ class IosUnityBridge {
     }
 
     @objc private func arSeesionStart(_ n: NSNotification){
+        print(">>>>>>>>>>>>>>")
         print(n.userInfo?["data"] as Any)
     }
     @objc private func targetDetected(_ n: NSNotification){
+        print(">>>>>>>>>>>>>>")
         print(n.userInfo?["data"] as Any)
     }
     @objc private func arContentsShown(_ n: NSNotification){
+        print(">>>>>>>>>>>>>>")
         print(n.userInfo?["data"] as Any)
     }
     @objc private func arContentClicked(_ n: NSNotification){
+        print(">>>>>>>>>>>>>>")
         print(n.userInfo?["data"] as Any)
     }
     @objc private func errorOccured(_ n: NSNotification){
+        print(">>>>>>>>>>>>>>")
         print(n.userInfo?["data"] as Any)
     }
 }
