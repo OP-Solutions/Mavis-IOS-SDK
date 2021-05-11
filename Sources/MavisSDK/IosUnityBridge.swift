@@ -28,24 +28,29 @@ class IosUnityBridge {
     }
 
     @objc private func arSeesionStart(_ n: NSNotification){
-        print(">>>>>>>>>>>>>>")
-        print(n.userInfo?["data"] as Any)
+        let json = (n.userInfo?["data"] ?? "") as! String
+        let parsedData = try! JSONDecoder().decode(ArSessionInfo.self, from: json.data(using: .utf8)!)
+        eventHandler.ArSeesionStart(sessionInfo: parsedData)
     }
     @objc private func targetDetected(_ n: NSNotification){
-        print(">>>>>>>>>>>>>>")
-        print(n.userInfo?["data"] as Any)
+        let json = (n.userInfo?["data"] ?? "") as! String
+        let parsedData = try! JSONDecoder().decode(Target.self, from: json.data(using: .utf8)!)
+        eventHandler.TargetDetected(target: parsedData)
     }
     @objc private func arContentsShown(_ n: NSNotification){
-        print(">>>>>>>>>>>>>>")
-        print(n.userInfo?["data"] as Any)
+        let json = (n.userInfo?["data"] ?? "") as! String
+        let parsedData = try! JSONDecoder().decode(ArContentsInfo.self, from: json.data(using: .utf8)!)
+        eventHandler.ArContentsShown(contentsInfo: parsedData)
     }
     @objc private func arContentClicked(_ n: NSNotification){
-        print(">>>>>>>>>>>>>>")
-        print(n.userInfo?["data"] as Any)
+        let json = (n.userInfo?["data"] ?? "") as! String
+        let parsedData = try! JSONDecoder().decode(ArContent.self, from: json.data(using: .utf8)!)
+        eventHandler.ArContentClicked(clickedContent: parsedData)
     }
     @objc private func errorOccured(_ n: NSNotification){
-        print(">>>>>>>>>>>>>>")
-        print(n.userInfo?["data"] as Any)
+        let json = (n.userInfo?["data"] ?? "") as! String
+        let parsedData = try! JSONDecoder().decode(MavisErrorInfo.self, from: json.data(using: .utf8)!)
+        eventHandler.Error(error: parsedData)
     }
 }
     
