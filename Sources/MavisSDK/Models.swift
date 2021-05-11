@@ -36,7 +36,7 @@ public struct MavisErrorInfo : Codable{
     public var sessionId: String
 }
 
-public class MavisOptions : Codable {
+public class MavisOptions {
     public var licenseKey : String = ""
 }
 
