@@ -8,9 +8,9 @@
 import Foundation
 
 class IosUnityBridge {
-    private var eventHandler: MavisEvendHandlerBase! = MavisEvendHandlerBase()
+    private var eventHandler: MavisEventHandlerBase! = MavisEventHandlerBase()
     
-    public func setEventHandler(_ customEventHandler: MavisEvendHandlerBase!){
+    public func setEventHandler(_ customEventHandler: MavisEventHandlerBase!){
         eventHandler = customEventHandler
     }
 
@@ -28,19 +28,19 @@ class IosUnityBridge {
     }
 
     @objc private func arSeesionStart(_ n: NSNotification){
-        print(n.userInfo?["data"])
+        print(n.userInfo?["data"] as Any)
     }
     @objc private func targetDetected(_ n: NSNotification){
-        print(n.userInfo?["data"])
+        print(n.userInfo?["data"] as Any)
     }
     @objc private func arContentsShown(_ n: NSNotification){
-        print(n.userInfo?["data"])
+        print(n.userInfo?["data"] as Any)
     }
     @objc private func arContentClicked(_ n: NSNotification){
-        print(n.userInfo?["data"])
+        print(n.userInfo?["data"] as Any)
     }
     @objc private func errorOccured(_ n: NSNotification){
-        print(n.userInfo?["data"])
+        print(n.userInfo?["data"] as Any)
     }
 }
     

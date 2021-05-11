@@ -38,7 +38,7 @@ public class Mavis: UIResponder, UIApplicationDelegate {
         hostMainWindow?.makeKeyAndVisible()
     }
     
-    public static func setEventHandler(_ customEventHandler: MavisEvendHandlerBase!){
+    public static func setEventHandler(_ customEventHandler: MavisEventHandlerBase!){
         bridge.setEventHandler(customEventHandler)
     }
 
