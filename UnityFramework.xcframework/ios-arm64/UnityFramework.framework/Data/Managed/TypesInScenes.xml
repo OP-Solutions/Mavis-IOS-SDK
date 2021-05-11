@@ -47,6 +47,7 @@
 		<type fullname="ApplicationBehaviour" preserve="nothing"/>
 		<type fullname="AugmentationEvents" preserve="nothing"/>
 		<type fullname="CloseButtonScript" preserve="nothing"/>
+		<type fullname="DotsAnimationScript" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
