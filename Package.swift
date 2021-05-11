@@ -8,23 +8,19 @@ let package = Package(
     products: [
         .library(
             name: "MavisSDK",
-            targets: ["MavisSDK","UnityFramework","WikitudeSDK","iOSUnityBridge"]),
+            targets: ["MavisSDK","UnityFramework","WikitudeSDK"]),
     ],
     dependencies: [
-
     ],
     targets: [
         .target(
             name: "MavisSDK",
-            dependencies: ["UnityFramework", "WikitudeSDK","iOSUnityBridge"]),
+            dependencies: ["UnityFramework", "WikitudeSDK"]),
         .binaryTarget(
             name: "UnityFramework",
             path: "UnityFramework.xcframework"),
         .binaryTarget(
             name: "WikitudeSDK",
-            path: "WikitudeSDK.xcframework"),
-        .target(
-            name: "iOSUnityBridge",
-            path: "Sources/Bridge")
+            path: "WikitudeSDK.xcframework")
     ]
 )

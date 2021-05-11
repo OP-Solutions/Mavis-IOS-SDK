@@ -6,11 +6,11 @@ public class Mavis: UIResponder, UIApplicationDelegate {
     private static let dataBundleId: String = "com.unity3d.framework"
     private static let frameworkPath: String = "/Frameworks/UnityFramework.framework"
     private static let unloadListener = MavisUnityListener()
+    private static let bridge = IosUnityBridge()
 
     private static var mavisOptions: MavisOptions?
     private static var ufw : UnityFramework?
     private static var hostMainWindow : UIWindow?
-
     
     
     private static var isInitialized: Bool {
@@ -20,6 +20,7 @@ public class Mavis: UIResponder, UIApplicationDelegate {
     	
     public static func Init(_ options : MavisOptions){
         mavisOptions = options;
+        bridge.Init()
     }
     
     public static func Launch(_ parentWindow: UIWindow?) {
@@ -30,12 +31,17 @@ public class Mavis: UIResponder, UIApplicationDelegate {
             initWindow()
         }
     }
+
     public static func unloadUnity(){
         ufw?.unregisterFrameworkListener(unloadListener)
         ufw = nil
         hostMainWindow?.makeKeyAndVisible()
     }
     
+    public static func setEventHandler(_ customEventHandler: MavisEvendHandlerBase!){
+        bridge.setEventHandler(customEventHandler)
+    }
+
     private static func initWindow() {
         if isInitialized {
             showWindow()
@@ -90,4 +96,6 @@ public class Mavis: UIResponder, UIApplicationDelegate {
     
 
 }
+
+
 
