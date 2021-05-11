@@ -21,6 +21,7 @@ public class Mavis: UIResponder, UIApplicationDelegate {
     public static func Init(_ options : MavisOptions){
         mavisOptions = options;
         bridge.Init()
+        
     }
     
     public static func Launch(_ parentWindow: UIWindow?) {
@@ -56,8 +57,9 @@ public class Mavis: UIResponder, UIApplicationDelegate {
         self.ufw = ufw
         ufw.setDataBundleId(dataBundleId)
         ufw.register(unloadListener)
-        UserDefaults.standard.set("--------------------> SomeLaunchOptionsValue", forKey: "SomeLaunchOptionKey") //setObject
-
+        
+        print("-------------------->" + ( mavisOptions?.licenseKey ?? ""))
+        CommandLine.arguments.append(mavisOptions?.licenseKey ?? "")
         ufw.runEmbedded(
             withArgc: CommandLine.argc,
             argv: CommandLine.unsafeArgv,
