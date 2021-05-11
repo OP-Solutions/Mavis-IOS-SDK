@@ -12,7 +12,7 @@ import Foundation
 public struct ArContent : Codable{
     public var name: String
     public var sessionId: String
-    public var type: AugmentationType
+    public var type: String
 }
 
 
