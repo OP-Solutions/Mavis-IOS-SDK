@@ -56,11 +56,12 @@ public class Mavis: UIResponder, UIApplicationDelegate {
         self.ufw = ufw
         ufw.setDataBundleId(dataBundleId)
         ufw.register(unloadListener)
-        let options = ["SomeLaunchOptionKey":"--------------------> SomeLaunchOptionsValue"]
+        UserDefaults.standard.set("--------------------> SomeLaunchOptionsValue", forKey: "SomeLaunchOptionKey") //setObject
+
         ufw.runEmbedded(
             withArgc: CommandLine.argc,
             argv: CommandLine.unsafeArgv,
-            appLaunchOpts: options
+            appLaunchOpts: nil
         )
     }
 
