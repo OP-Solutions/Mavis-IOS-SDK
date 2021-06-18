@@ -8,6 +8,8 @@
 import Foundation
 
 open class MavisEventHandlerBase{
+    public init() {
+    }
 
    /**
    * Called When AR Session is started, i.e. camera view is shown to user
