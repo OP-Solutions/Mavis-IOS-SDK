@@ -7,13 +7,13 @@
 
 import Foundation
 
-public class MavisEventHandlerBase{
+open class MavisEventHandlerBase{
 
    /**
    * Called When AR Session is started, i.e. camera view is shown to user
    * sessionInfo.sessionId - newly generated session Id for current AR session (format: uuid4, url-safe encoding)
    */
-   public func ArSeesionStart(sessionInfo : ArSessionInfo){
+   open func ArSeesionStart(sessionInfo : ArSessionInfo){
         print(sessionInfo)
    }
 
@@ -22,7 +22,7 @@ public class MavisEventHandlerBase{
    * target.name - name of the target image which is detected (defined from CMS side when uploading it).
    * target.sessionId - Id of current AR session (format: uuid4, url-safe encoding)
    */
-   public func TargetDetected(target : Target){
+   open func TargetDetected(target : Target){
         print(target)
    }
 
@@ -32,7 +32,7 @@ public class MavisEventHandlerBase{
    * contentsInfo.sessionId - Id of current AR session (format: uuid4, url-safe encoding)
    * contentsInfo.shownArContents - list of AR contents diplayed. "ArContent" class see below
    */
-   public func ArContentsShown(contentsInfo : ArContentsInfo){
+   open func ArContentsShown(contentsInfo : ArContentsInfo){
         print(contentsInfo)
    }
 
@@ -42,7 +42,7 @@ public class MavisEventHandlerBase{
    * content.name - unique name of AR content, that was clicked
    * content.type - enum (Image - normal 2D image, Object - 3D object)
    */
-   public func ArContentClicked(clickedContent : ArContent){
+   open func ArContentClicked(clickedContent : ArContent){
         print(clickedContent)
    }
 
@@ -52,7 +52,7 @@ public class MavisEventHandlerBase{
    * error.errorMessage : string - error description
    * error.sessionId - Id of current AR session, can be null if AR session has not started yet
    */
-   public func Error(error : MavisErrorInfo ){
+   open func Error(error : MavisErrorInfo ){
         print(error)
    }
 }
