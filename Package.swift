@@ -8,17 +8,15 @@ let package = Package(
     products: [
         .library(
             name: "MavisSDK",
-            targets: ["MavisSDK","UnityFramework"]),
+            targets: ["MavisSDK"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "MavisSDK",
-            dependencies: ["UnityFramework"]),
-        .binaryTarget(
-            name: "UnityFramework",
-            path: "UnityFramework.xcframework"),
+            name: "MavisSDK"
+        )
+
         
     ]
 )
