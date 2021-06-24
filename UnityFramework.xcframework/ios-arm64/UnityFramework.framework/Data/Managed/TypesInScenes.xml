@@ -48,6 +48,7 @@
 		<type fullname="AugmentationEvents" preserve="nothing"/>
 		<type fullname="CloseButtonScript" preserve="nothing"/>
 		<type fullname="DotsAnimationScript" preserve="nothing"/>
+		<type fullname="SafeAreaFilter" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
