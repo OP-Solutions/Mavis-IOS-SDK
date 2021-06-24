@@ -8,7 +8,7 @@ let package = Package(
     products: [
         .library(
             name: "MavisSDK",
-            targets: ["MavisSDK","UnityFramework","WikitudeSDK"]),
+            targets: ["MavisSDK","UnityFramework"]),
     ],
     dependencies: [
     ],
