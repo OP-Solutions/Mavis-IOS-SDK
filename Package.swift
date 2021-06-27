@@ -3,19 +3,20 @@
 
 import PackageDescription
 
+
 let package = Package(
     name: "MavisSDK",
     products: [
         .library(
             name: "MavisSDK",
-            targets: ["MavisSDK","UnityFramework","WikitudeSDK"]),
+            targets: ["MavisSDK"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
             name: "MavisSDK",
-            dependencies: ["UnityFramework", "WikitudeSDK"]),
+            dependencies: ["UnityFramework","WikitudeSDK"]),
         .binaryTarget(
             name: "UnityFramework",
             path: "UnityFramework.xcframework"),
