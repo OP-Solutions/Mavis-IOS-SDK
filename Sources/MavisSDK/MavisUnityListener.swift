@@ -6,6 +6,7 @@
 //
 
 import Foundation
+#if !targetEnvironment(simulator)
 import UnityFramework
 
 class MavisUnityListener: UIResponder, UIApplicationDelegate, UnityFrameworkListener  {
@@ -13,3 +14,10 @@ class MavisUnityListener: UIResponder, UIApplicationDelegate, UnityFrameworkList
         Mavis.unloadUnity();
     }
 }
+#else
+class MavisUnityListener {
+    public func unityDidUnload(_ notification: Notification!) {
+    }
+}
+
+#endif

@@ -1,4 +1,5 @@
 import Foundation
+#if !targetEnvironment(simulator)
 import UnityFramework
 
 public class Mavis: UIResponder, UIApplicationDelegate {
@@ -100,4 +101,16 @@ public class Mavis: UIResponder, UIApplicationDelegate {
 }
 
 
-
+#else
+import UIKit
+public class Mavis{
+    public static func Init(_ options : MavisOptions){
+    }
+    public static func Launch(_ parentWindow: UIWindow?) {
+    }
+    public static func setEventHandler(_ customEventHandler: MavisEventHandlerBase!){
+    }
+    public static func unloadUnity(){
+    }
+}
+#endif

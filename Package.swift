@@ -3,14 +3,12 @@
 
 import PackageDescription
 
-let notSimulator:TargetDependencyCondition = .when(platforms: [.iOS,.watchOS])
 
 let package = Package(
     name: "MavisSDK",
     products: [
         .library(
             name: "MavisSDK",
-            type: .dynamic,
             targets: ["MavisSDK"]),
     ],
     dependencies: [
@@ -18,9 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "MavisSDK",
-            dependencies: [
-                .byName(name: "UnityFramework",condition: notSimulator),
-                .byName(name: "WikitudeSDK", condition: notSimulator)]),
+            dependencies: ["UnityFramework","WikitudeSDK"]),
         .binaryTarget(
             name: "UnityFramework",
             path: "UnityFramework.xcframework"),
