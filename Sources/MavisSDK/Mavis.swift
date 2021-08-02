@@ -1,5 +1,5 @@
 import Foundation
-#if !targetEnvironment(simulator)
+#if !targetEnvironment(simulator) && arch(arm64)
 import UnityFramework
 
 public class Mavis: UIResponder, UIApplicationDelegate {
