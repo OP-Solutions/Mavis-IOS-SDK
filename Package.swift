@@ -10,6 +10,9 @@ let package = Package(
         .library(
             name: "MavisSDK",
             targets: ["MavisSDK"]),
+        .library(
+            name: "UnityFramework",
+            targets: ["UnityFramework"]),
     ],
     dependencies: [
     ],
