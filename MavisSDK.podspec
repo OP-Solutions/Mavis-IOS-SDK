@@ -3,5 +3,5 @@ s.name = 'MavisSDK'
   s.version = '1.3.1'
   s.authors = 'OP Solutions'
   s.summary = 'Swift SDK for Mavis'
-  s.source_files = '*'
+  s.source_files = '**/*' , ''
 end
