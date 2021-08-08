@@ -19,9 +19,9 @@ let package = Package(
             dependencies: ["UnityFramework", "WikitudeSDK"]),
         .binaryTarget(
             name: "UnityFramework",
-            path: "UnityFramework.xcframework"),
+            path: "Sources/MavisSDK/Frameworks/UnityFramework.xcframework"),
         .binaryTarget(
             name: "WikitudeSDK",
-            path: "WikitudeSDK.xcframework")
+            path: "Sources/MavisSDK/Frameworks/WikitudeSDK.xcframework")
     ]
 )
