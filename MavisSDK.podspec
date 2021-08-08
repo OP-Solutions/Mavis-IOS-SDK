@@ -12,5 +12,16 @@ Pod::Spec.new do |s|
   s.license = 'Proprietary'
   s.homepage = 'https://github.com/OP-Solutions/Mavis-IOS-SDK'
   s.source = { :git => 'git@github.com:OP-Solutions/Mavis-IOS-SDK.git'}
+  other_frameworks =  ['UnityFramework','WikitudeSDK']
   
+  other_ldflags = '$(inherited) -framework ' + other_frameworks.join(' -framework ') +
+    ' -lz -lstdc++'
+
+  s.xcconfig     = {
+    'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/opentok-ios-sdk-webrtc"',
+
+    'OTHER_LDFLAGS[arch=arm64]'  => other_ldflags,
+    'OTHER_LDFLAGS[arch=armv7]'  => other_ldflags,
+    'OTHER_LDFLAGS[arch=armv7s]' => other_ldflags
+  }
 end
