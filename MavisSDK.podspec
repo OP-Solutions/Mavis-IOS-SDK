@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     ' -lz -lstdc++'
 
   s.xcconfig     = {
-    'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/opentok-ios-sdk-webrtc"',
+    'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/MavisSDK"',
 
     'OTHER_LDFLAGS[arch=arm64]'  => other_ldflags,
     'OTHER_LDFLAGS[arch=armv7]'  => other_ldflags,
