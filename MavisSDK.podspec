@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MavisSDK'
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '10.0'
   s.version = '1.3.2'
   s.authors = 'OP Solutions'
   s.summary = 'Swift SDK for Mavis'
