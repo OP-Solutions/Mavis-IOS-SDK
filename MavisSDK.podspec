@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version = '1.3.2'
   s.authors = 'OP Solutions'
   s.summary = 'Swift SDK for Mavis'
-  s.source_files = 'Sources/MavisSDK/*.swift',
+  s.source_files = 'Sources/MavisSDK/*.swift'
   s.vendored_frameworks = 'UnityFramework.framework', 'WikitudeSDK.framework'
   s.license = 'Proprietary'
   s.homepage = 'https://github.com/OP-Solutions/Mavis-IOS-SDK'
