@@ -17,8 +17,12 @@ class IosUnityBridge {
     public func Init(){
         NotificationCenter.default.addObserver(self, selector: #selector(arSeesionStart(_:)), 
                             name: NSNotification.Name("ArSessionStart") , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(arSeesionEnd(_:)),
+                            name: NSNotification.Name("ArSessionEnd") , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(targetDetected(_:)), 
                             name: NSNotification.Name("TargetDetected") , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(targetLost(_:)),
+                            name: NSNotification.Name("TargetLost") , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(arContentsShown(_:)), 
                             name: NSNotification.Name("ArContentsShown") , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(arContentClicked(_:)), 
@@ -29,13 +33,23 @@ class IosUnityBridge {
 
     @objc private func arSeesionStart(_ n: NSNotification){
         let json = (n.userInfo?["data"] ?? "") as! String
-        let parsedData = try! JSONDecoder().decode(ArSessionInfo.self, from: json.data(using: .utf8)!)
+        let parsedData = try! JSONDecoder().decode(ArSessionStartInfo.self, from: json.data(using: .utf8)!)
         eventHandler.ArSeesionStart(sessionInfo: parsedData)
+    }
+    @objc private func arSeesionEnd(_ n: NSNotification){
+        let json = (n.userInfo?["data"] ?? "") as! String
+        let parsedData = try! JSONDecoder().decode(ArSessionEndInfo.self, from: json.data(using: .utf8)!)
+        eventHandler.ArSeesionEnd(sessionInfo: parsedData)
     }
     @objc private func targetDetected(_ n: NSNotification){
         let json = (n.userInfo?["data"] ?? "") as! String
-        let parsedData = try! JSONDecoder().decode(Target.self, from: json.data(using: .utf8)!)
+        let parsedData = try! JSONDecoder().decode(ArTargetDetectedArgs.self, from: json.data(using: .utf8)!)
         eventHandler.TargetDetected(target: parsedData)
+    }
+    @objc private func targetLost(_ n: NSNotification){
+        let json = (n.userInfo?["data"] ?? "") as! String
+        let parsedData = try! JSONDecoder().decode(ArTargetLostArgs.self, from: json.data(using: .utf8)!)
+        eventHandler.TargetLost(target: parsedData)
     }
     @objc private func arContentsShown(_ n: NSNotification){
         let json = (n.userInfo?["data"] ?? "") as! String
