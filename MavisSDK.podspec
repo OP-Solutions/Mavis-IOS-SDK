@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
     'OTHER_LDFLAGS[arch=armv7]'  => other_ldflags,
     'OTHER_LDFLAGS[arch=armv7s]' => other_ldflags
   }
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
