@@ -16,9 +16,16 @@ public struct ArContent : Codable{
 }
 
 
-public struct Target : Codable {
+public struct ArTargetDetectedArgs : Codable {
     public var name: String
     public var sessionId: String
+    public var timestamp: Int64
+}
+
+public struct ArTargetLostArgs : Codable {
+    public var name: String
+    public var sessionId: String
+    public var duration: Double
 }
 
 public struct ArContentsInfo : Codable {
@@ -27,8 +34,13 @@ public struct ArContentsInfo : Codable {
     public var shownArContents: [ArContent]
 }
 
-public struct ArSessionInfo : Codable{
+public struct ArSessionStartInfo : Codable{
     public var sessionId: String
+}
+
+public struct ArSessionEndInfo : Codable{
+    public var sessionId: String
+    public var duration: Double
 }
 
 public struct MavisErrorInfo : Codable{
