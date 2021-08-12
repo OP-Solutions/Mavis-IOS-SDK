@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license = 'Proprietary'
   s.homepage = 'https://github.com/OP-Solutions/Mavis-IOS-SDK'
   s.source = { :git => 'https://github.com/OP-Solutions/Mavis-IOS-SDK.git'}
-  other_frameworks =  ['UnityFramework','WikitudeSDK']
+  other_frameworks =  ['"UnityFramework"','"WikitudeSDK"']
   
   other_ldflags = '$(inherited) -framework ' + other_frameworks.join(' -framework ') +
     ' -lz -lstdc++'
@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
     'OTHER_LDFLAGS[arch=armv7]'  => other_ldflags,
     'OTHER_LDFLAGS[arch=armv7s]' => other_ldflags
   }
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
