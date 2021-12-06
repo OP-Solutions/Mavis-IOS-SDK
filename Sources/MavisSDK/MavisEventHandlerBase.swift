@@ -15,7 +15,7 @@ open class MavisEventHandlerBase{
      * Called When AR Session is started, i.e. camera view is shown to user
      * sessionInfo.sessionId - newly generated session Id for current AR session (format: uuid4, url-safe encoding)
      */
-    open func ArSeesionStart(sessionInfo : ArSessionStartInfo){
+    open func ArSessionStart(sessionInfo : ArSessionStartInfo){
         print(sessionInfo)
     }
 
@@ -24,7 +24,7 @@ open class MavisEventHandlerBase{
     * arSessionEndInfo.sessionId - session Id for current AR session (format: uuid4, url-safe encoding)
     * arSessionEndInfo.duration - Ar session duration (in minutes)
     */
-    open func ArSeesionEnd(sessionInfo : ArSessionEndInfo){
+    open func ArSessionEnd(sessionInfo : ArSessionEndInfo){
         print(sessionInfo)
     }
    

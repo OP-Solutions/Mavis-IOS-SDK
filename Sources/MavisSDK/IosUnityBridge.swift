@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Lasha Bukhnikashvili on 10.05.21.
 //
@@ -15,31 +15,31 @@ class IosUnityBridge {
     }
 
     public func Init(){
-        NotificationCenter.default.addObserver(self, selector: #selector(arSeesionStart(_:)), 
+        NotificationCenter.default.addObserver(self, selector: #selector(arSessionStart(_:)),
                             name: NSNotification.Name("ArSessionStart") , object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(arSeesionEnd(_:)),
+        NotificationCenter.default.addObserver(self, selector: #selector(arSessionEnd(_:)),
                             name: NSNotification.Name("ArSessionEnd") , object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(targetDetected(_:)), 
+        NotificationCenter.default.addObserver(self, selector: #selector(targetDetected(_:)),
                             name: NSNotification.Name("TargetDetected") , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(targetLost(_:)),
                             name: NSNotification.Name("TargetLost") , object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(arContentsShown(_:)), 
+        NotificationCenter.default.addObserver(self, selector: #selector(arContentsShown(_:)),
                             name: NSNotification.Name("ArContentsShown") , object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(arContentClicked(_:)), 
+        NotificationCenter.default.addObserver(self, selector: #selector(arContentClicked(_:)),
                             name: NSNotification.Name("ArContentClicked") , object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(errorOccured(_:)), 
+        NotificationCenter.default.addObserver(self, selector: #selector(errorOccured(_:)),
                             name: NSNotification.Name("ErrorOccured") , object: nil)
     }
 
-    @objc private func arSeesionStart(_ n: NSNotification){
+    @objc private func arSessionStart(_ n: NSNotification){
         let json = (n.userInfo?["data"] ?? "") as! String
         let parsedData = try! JSONDecoder().decode(ArSessionStartInfo.self, from: json.data(using: .utf8)!)
-        eventHandler.ArSeesionStart(sessionInfo: parsedData)
+        eventHandler.ArSessionStart(sessionInfo: parsedData)
     }
-    @objc private func arSeesionEnd(_ n: NSNotification){
+    @objc private func arSessionEnd(_ n: NSNotification){
         let json = (n.userInfo?["data"] ?? "") as! String
         let parsedData = try! JSONDecoder().decode(ArSessionEndInfo.self, from: json.data(using: .utf8)!)
-        eventHandler.ArSeesionEnd(sessionInfo: parsedData)
+        eventHandler.ArSessionEnd(sessionInfo: parsedData)
     }
     @objc private func targetDetected(_ n: NSNotification){
         let json = (n.userInfo?["data"] ?? "") as! String
