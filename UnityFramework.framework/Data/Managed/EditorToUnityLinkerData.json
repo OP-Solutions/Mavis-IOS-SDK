@@ -49,8 +49,8 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "Shader",
-            "fullManagedTypeName": "UnityEngine.Shader",
+            "nativeClass": "Material",
+            "fullManagedTypeName": "UnityEngine.Material",
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
@@ -69,6 +69,15 @@
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "TextAsset",
             "fullManagedTypeName": "UnityEngine.TextAsset",
+            "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Shader",
+            "fullManagedTypeName": "UnityEngine.Shader",
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
@@ -105,15 +114,6 @@
             "fullManagedTypeName": "UnityEditor.PhysicsManager",
             "moduleName": "Physics",
             "usedInScenes": []
-        },
-        {
-            "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "Material",
-            "fullManagedTypeName": "UnityEngine.Material",
-            "moduleName": "Core",
-            "usedInScenes": [
-                "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
-            ]
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
@@ -307,26 +307,8 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "GameObject",
-            "fullManagedTypeName": "UnityEngine.GameObject",
-            "moduleName": "Core",
-            "usedInScenes": [
-                "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
-            ]
-        },
-        {
-            "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "LightProbes",
-            "fullManagedTypeName": "UnityEngine.LightProbes",
-            "moduleName": "Core",
-            "usedInScenes": [
-                "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
-            ]
-        },
-        {
-            "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "Camera",
-            "fullManagedTypeName": "UnityEngine.Camera",
+            "nativeClass": "Transform",
+            "fullManagedTypeName": "UnityEngine.Transform",
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
@@ -343,8 +325,8 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "Transform",
-            "fullManagedTypeName": "UnityEngine.Transform",
+            "nativeClass": "GameObject",
+            "fullManagedTypeName": "UnityEngine.GameObject",
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
@@ -354,6 +336,15 @@
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "RenderSettings",
             "fullManagedTypeName": "UnityEngine.RenderSettings",
+            "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "LightProbes",
+            "fullManagedTypeName": "UnityEngine.LightProbes",
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
@@ -433,6 +424,15 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Camera",
+            "fullManagedTypeName": "UnityEngine.Camera",
+            "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "FlareLayer",
             "fullManagedTypeName": "UnityEngine.FlareLayer",
             "moduleName": "Core",
@@ -444,6 +444,15 @@
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "Mesh",
             "fullManagedTypeName": "UnityEngine.Mesh",
+            "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "SpriteRenderer",
+            "fullManagedTypeName": "UnityEngine.SpriteRenderer",
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Wikitude/Samples/Scenes/Instant Tracking - Scene Picking.unity"
@@ -475,6 +484,13 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "ClearScreenScript",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "CloseButtonScript",
             "moduleName": "",
             "usedInScenes": []
@@ -483,6 +499,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "DotsAnimationScript",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "RotationScript",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -1410,6 +1433,12 @@
             "module": "Editor",
             "baseName": "NamedObject",
             "baseModule": "Core"
+        },
+        {
+            "name": "AndroidAssetPackImporter",
+            "module": "Editor",
+            "baseName": "AssetImporter",
+            "baseModule": "Editor"
         },
         {
             "name": "AssemblyDefinitionImporter",
